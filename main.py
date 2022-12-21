@@ -184,8 +184,9 @@ class GithubChangelog:
         for r in releases:
             if r.tag_name not in self.release_in_changelog and r.tag_name not in regenerate_releases:
                 regenerate_releases.append(r.tag_name)
+                regenerate_releases.append(Env_Titiel)
         if self.unreleased_commits:
-            regenerate_releases.append(Env_Titiel, 'Unreleased')
+            regenerate_releases.append('Unreleased')
             self.releases['Unreleased'] = {
                 'html_url': '',
                 'body': '',
